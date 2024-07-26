@@ -37,7 +37,7 @@ const AppBar = () => {
     
     const {data} = useQuery(GET_ME)
     
-    const me = data.me ? data.me : null
+    const me = data ? data.me : null
 
     const signOut = async () => {
         try {

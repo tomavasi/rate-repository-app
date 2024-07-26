@@ -1,8 +1,9 @@
-import {  StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import AppBar from './components/AppBar';
 import RepositoryList from './components/RepositoryList';
 import { Route, Routes, Navigate } from 'react-router-native';
 import SignIn from "./components/SignIn";
+import SingleItemPage from "./components/SingleItemPage";
 
 
 
@@ -13,14 +14,16 @@ const styles = StyleSheet.create({
     }
 })
 
-export default function Main () {
-    
+export default function Main() {
+
     return (
         <View style={styles.container}>
-            <AppBar/>
+            <AppBar />
             <Routes>
-                <Route path="/" element={<RepositoryList />}/>
-                <Route path="/signin" element={<SignIn/>}/>
+                <Route path="/" element={<RepositoryList />}>
+                </Route>
+                <Route path="/:repoId" element={<SingleItemPage />} />
+                <Route path="/signin" element={<SignIn />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
         </View>

@@ -34,10 +34,10 @@ export default function RepositoryItem({ repositoryItem }) {
         <View style={styles.container}>
             <View style={styles.containerOne}>
                 <Image style={styles.image} source={{ uri: repositoryItem.ownerAvatarUrl }} />
-                <Info fullName={repositoryItem.fullName} description={repositoryItem.description} language={repositoryItem.language}/>
+                <Info fullName={repositoryItem.fullName} description={repositoryItem.description} language={repositoryItem.language} />
             </View>
             <View style={styles.containerTwo}>
-               <Stats reviewCount={repositoryItem.reviewCount} stargazersCount={repositoryItem.stargazersCount} forksCount={repositoryItem.forksCount} ratingAverage={repositoryItem.ratingAverage}/>
+                <Stats reviewCount={repositoryItem.reviewCount} stargazersCount={repositoryItem.stargazersCount} forksCount={repositoryItem.forksCount} ratingAverage={repositoryItem.ratingAverage} />
             </View>
         </View>
     )
