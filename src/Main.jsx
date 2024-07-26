@@ -6,7 +6,7 @@ import SignIn from "./components/SignIn";
 
 
 
-const styles =StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
         flexGrow: 1,
         flexShrink: 1,
