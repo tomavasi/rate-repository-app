@@ -1,8 +1,8 @@
 import { FlatList, View, StyleSheet } from 'react-native';
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import RepositoryItem from './RepositoryItem';
 import theme from '../themes/themes';
-import useRepositories from '../hooks/useRepositories';
+// import useRepositories from '../hooks/useRepositories';
 import { useQuery } from '@apollo/client';
 import { GET_REPOSITORIES } from '../graphql/queries';
 
@@ -18,7 +18,7 @@ const ItemSeparator = () => <View style={styles.separator} />;
 
 const RepositoryList = () => {
 
-  const { data, error, loading } = useQuery(GET_REPOSITORIES, {
+  const { data } = useQuery(GET_REPOSITORIES, {
     fetchPolicy: 'cache-and-network'
   });
 

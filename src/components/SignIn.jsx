@@ -3,6 +3,10 @@ import { Pressable, TextInput, View, Text, StyleSheet } from "react-native";
 import theme from "../themes/themes";
 import { useSignIn } from "../hooks/useSignIn";
 import * as yup from "yup";
+import { useNavigate } from "react-router-native";
+import { useApolloClient } from "@apollo/client";
+import { useContext } from "react";
+import LoginContext from "../contexts/LoginContext";
 
 const SignIn = () => {
 
@@ -50,12 +54,15 @@ const SignIn = () => {
     }
 
     const [signIn] = useSignIn();
-
+    const navigate = useNavigate();
+    const {setLogin} = useContext(LoginContext)
     const onSubmit = async (values) => {
+
         const {username, password} = values;
         try {
-            const {data} = await signIn({ username, password });
-            console.log(data.authenticate.accessToken)
+            await signIn({ username, password });
+            setLogin(true);
+            navigate("/")
           } catch (e) {
             console.log(e);
           }
