@@ -4,6 +4,8 @@ import RepositoryList from './components/RepositoryList';
 import { Route, Routes, Navigate } from 'react-router-native';
 import SignIn from "./components/SignIn";
 import SingleItemPage from "./components/SingleItemPage";
+import CreateReview from "./components/CreateReview";
+import SignUp from "./components/SignUp";
 
 
 
@@ -23,7 +25,9 @@ export default function Main() {
                 <Route path="/" element={<RepositoryList />}>
                 </Route>
                 <Route path="/:repoId" element={<SingleItemPage />} />
+                <Route path="/review" element={<CreateReview />}/>
                 <Route path="/signin" element={<SignIn />} />
+                <Route path="/signup" element={<SignUp />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
         </View>

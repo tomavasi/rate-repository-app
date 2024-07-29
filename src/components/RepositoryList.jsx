@@ -34,8 +34,8 @@ const RepositoryList = () => {
       data={repositoryNodes}
       ItemSeparatorComponent={ItemSeparator}
       renderItem={({ item }) => (
-        <Pressable onPress={() => {console.log(item.id);navigate(`${item.id}`)}}>
-          <RepositoryItem repositoryItem={item} />
+        <Pressable onPress={() => {navigate(`${item.id}`)}}>
+          <RepositoryItem repositoryItem={item} showButton={false}/>
         </Pressable>
 
       )

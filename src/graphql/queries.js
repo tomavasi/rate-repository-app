@@ -41,6 +41,21 @@ export const SINGLE_REPO = gql`
             stargazersCount
             ownerAvatarUrl
             ratingAverage
+            url
+            reviews {
+              edges {
+                node {
+                  id
+                  rating
+                  text
+                  user {
+                    id
+                    username
+                        }
+                  createdAt
+                }
+              }
+            }
   }
 }
 `

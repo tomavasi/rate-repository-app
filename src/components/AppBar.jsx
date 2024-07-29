@@ -34,9 +34,9 @@ const AppBar = () => {
     const authStorage = useAuthStorage();
 
     const client = useApolloClient();
-    
-    const {data} = useQuery(GET_ME)
-    
+
+    const { data } = useQuery(GET_ME)
+
     const me = data ? data.me : null
 
     const signOut = async () => {
@@ -55,9 +55,15 @@ const AppBar = () => {
                 <Link to="/">
                     <Text style={styles.text}>Repositories</Text>
                 </Link>
-                    <Link to="/signin">
-                        {!me? <Text style={styles.text}>Sign In</Text> : <Text style={styles.text} onPress={signOut}>Sign Out</Text>}
-                    </Link> 
+                <Link to="/review">
+                    <Text style={styles.text}>Create a review</Text>
+                </Link>
+                <Link to="/signin">
+                    {!me ? <Text style={styles.text}>Sign In</Text> : <Text style={styles.text} onPress={signOut}>Sign Out</Text>}
+                </Link>
+                {!me && <Link to="/signup">
+                   <Text style={styles.text}>Sign Up</Text>
+                </Link>}
             </ScrollView>
         </View>)
 };
