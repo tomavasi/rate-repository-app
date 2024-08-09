@@ -46,7 +46,7 @@ export default function CreateReview() {
     const initialValues = {
         ownerName: '',
         repoName: '',
-        rating: 0,
+        rating: '',
         review: ''
     }
     const [createReview] = useCreateReview();
@@ -70,7 +70,7 @@ export default function CreateReview() {
     const validationSchema = yup.object().shape({
         ownerName: yup.string().required("Repository owner name is required"),
         repoName: yup.string().required('Repository name is required'),
-        rating: yup.number().required("Rating is required")
+        rating: yup.string().required("Rating is required")
     })
 
     const formik = useFormik({
@@ -99,7 +99,6 @@ export default function CreateReview() {
             <TextInput style={formik.isValid ? styles.textInput : styles.onError}
                 placeholder="Rating between 0 and 100"
                 value={formik.values.rating}
-                keyboardType="numeric"
                 onChangeText={formik.handleChange('rating')} />
             {formik.touched.rating && formik.errors.rating && (
                 <Text style={{ color: 'red' }}>{formik.errors.rating}</Text>

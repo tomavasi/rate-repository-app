@@ -6,7 +6,7 @@ import SignIn from "./components/SignIn";
 import SingleItemPage from "./components/SingleItemPage";
 import CreateReview from "./components/CreateReview";
 import SignUp from "./components/SignUp";
-
+import ReviewsList from "./components/ReviewsList";
 
 
 const styles = StyleSheet.create({
@@ -28,6 +28,7 @@ export default function Main() {
                 <Route path="/review" element={<CreateReview />}/>
                 <Route path="/signin" element={<SignIn />} />
                 <Route path="/signup" element={<SignUp />} />
+                <Route path="/reviewlist" element={<ReviewsList/>}/>
                 <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
         </View>
